@@ -18,10 +18,6 @@ result = query("select concat(bookid, '. ', bookname) as bookname from Book")
 books = result['bookname'].tolist()
 
 tab1, tab2 = st.tabs(["고객조회", "거래 입력"])
-name = ""
-select_book = ""
-custid = 999
-result =pd.DataFrame()
 
 name = tab1.selectbox("고객명", customers)
 
@@ -52,3 +48,4 @@ if len(name) > 0:
                      dbConn.commit()
                      dbConn.close()
                      tab2.write('거래가 입력되었습니다.')
+
